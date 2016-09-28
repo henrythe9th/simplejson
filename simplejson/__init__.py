@@ -106,6 +106,11 @@ __all__ = [
 
 __author__ = 'Bob Ippolito <bob@redivi.com>'
 
+import sys
+import cdecimal
+# Ensure any import of decimal gets cdecimal instead.
+sys.modules['decimal'] = cdecimal 
+
 from decimal import Decimal
 
 from .scanner import JSONDecodeError
